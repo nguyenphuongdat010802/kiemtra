@@ -1,4 +1,6 @@
+
 <?php 
+
 class Db{
     protected static $connection;
     public function connect(){
@@ -11,12 +13,14 @@ class Db{
             }        
             return self::$connection;
         }
+
         public function query_execute($queryString){
             $connection = $this->connect();
             $result = $connection->query($queryString);
-            /
+            
             return $result;
         }
+
         public function select_to_array($queryString){
             $rows = array();
             $result = $this->query_execute($queryString);
